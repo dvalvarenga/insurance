@@ -1,0 +1,44 @@
+.ios, .md {
+
+    page-home {
+
+        .info{
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        .configs{
+            font-size: 0.8em;
+        }
+
+        .infoicon{
+            font-size: 1.5em;
+            padding-top: 10px;
+            padding-right: 5px;
+        }
+
+        p {
+            font-size: 0.8em;
+            color: #d2d2d2;
+        }
+
+        .swiper-slide {
+            display: block;
+        }
+
+        ion-label, .select-text {
+            margin-left: 10px;
+        }
+
+        ion-input, ion-select, ion-textarea {
+            background-color: #f2f2f2;
+            padding: 5px 10px;
+        }
+
+        .invalid {
+            border: 1px solid #ea6153;
+        }
+
+    }
+
+}
