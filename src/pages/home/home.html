@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary">
       <ion-title>
-        MedMap
+        Insurance
       </ion-title>
       <ion-buttons start>
         <button ion-button icon-left (click)="prev()"><ion-icon name="arrow-back"></ion-icon> Anterior</button>
@@ -16,80 +16,24 @@
   <ion-slides #signupSlider pager>
 
 <ion-slide>
-  <ion-item>
-    <ion-label class="info"><ion-icon name="contact" class="infoicon"></ion-icon>1310 - DAVID OLIVEIRA DE ALVARENGA</ion-label>
-  </ion-item>
-
-  <p *ngIf="submitAttempt" style="color: #ea6153;">Preencha as informações corretamente.</p>
-
-  <ion-list no-lines>
-
-      <form [formGroup]="slideOneForm">
-          <ion-item>
-              <ion-label floating>Nome</ion-label>
-              <ion-input formControlName="nome" type="text" [class.invalid]="!slideOneForm.controls.nome.valid && (slideOneForm.controls.nome.dirty || submitAttempt)"></ion-input>
-          </ion-item>
-          <ion-item *ngIf="!slideOneForm.controls.nome.valid  && (slideOneForm.controls.nome.dirty || submitAttempt)">
-            <p>Informe um nome válido.</p>
-          </ion-item>
-
-          <ion-item>
-              <ion-label floating>CPF/CNPJ</ion-label>
-              <ion-input formControlName="nome" type="text" ></ion-input>
-          </ion-item>
-
-          <ion-item>
-              <ion-label floating>Registro</ion-label>
-              <ion-input formControlName="nome" type="text" ></ion-input>
-          </ion-item>
-          <!-- <ion-item>
-              <ion-label class="info">Aceita algum convênio ?</ion-label>
-              <ion-toggle checked="false"></ion-toggle>
-          </ion-item>
-          <ion-item>
-              <ion-label class="info">Atende via chat ?</ion-label>
-              <ion-toggle checked="false"></ion-toggle>
-          </ion-item> -->
-          <!-- <ion-item>
-              <ion-label floating>Age</ion-label>
-              <ion-input formControlName="age" type="number" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
-          </ion-item>
-
-          <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
-              <p>Please enter a valid age.</p>
-          </ion-item> -->
-
-      </form>
-
-  </ion-list>
-
-</ion-slide>
-
-<ion-slide>
 
   <ion-list no-lines>
 
       <form [formGroup]="slideTwoForm">
         <ion-item>
-            <ion-label floating>Tipo</ion-label>
+            <ion-label floating>É um seguro novo ou renovação ?</ion-label>
             <ion-select [class.invalid]="!slideTwoForm.controls.tipo.valid && (slideTwoForm.controls.tipo.dirty || submitAttempt)" formControlName="tipo">
-              <ion-option value="1">Acupunturista</ion-option>
-              <ion-option value="2">Esteticista</ion-option>
-              <ion-option value="3">Fisioterapeuta</ion-option>
-              <ion-option value="4">Médico</ion-option>
-              <ion-option value="5">Odontologista</ion-option>
-              <ion-option value="6">Veterinário</ion-option>
+              <ion-option value="1">Seguro novo</ion-option>
+              <ion-option value="2">Renovação de seguro</ion-option>
             </ion-select>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Especialidade</ion-label>
-            <ion-select multiple="true">
-              <ion-option value="1">Cardiologia</ion-option>
-              <ion-option value="2">Pediatria</ion-option>
-              <ion-option value="3">Ginecologia</ion-option>
-              <ion-option value="4">Psiquiatria</ion-option>
-              <ion-option value="5">Psicologia</ion-option>
+            <ion-label floating>O seguro é para sua casa ou sua empresa ?</ion-label>
+            <!--<ion-select multiple="true">-->
+                <ion-select>
+              <ion-option value="1">Para minha casa</ion-option>
+              <ion-option value="2">Para minha empresa</ion-option> 
             </ion-select>
         </ion-item>
 
@@ -116,8 +60,65 @@
       </form>
 
   </ion-list>
+    
 
-  <!-- <button ion-button full color="primary" (click)="save()">Create Account!</button> -->
+
+</ion-slide>
+<ion-slide>
+  <!--<ion-item>
+    <ion-label class="info"><ion-icon name="contact" class="infoicon"></ion-icon>1310 - DAVID OLIVEIRA DE ALVARENGA</ion-label>
+  </ion-item>-->
+
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Preencha as informações corretamente.</p>
+
+  <ion-list no-lines>
+
+      <form [formGroup]="slideOneForm">
+            <ion-item>
+            <ion-label floating>É um apartamento ou uma casa ?</ion-label>
+            <ion-select >
+              <ion-option value="1">Apartamento</ion-option>
+              <ion-option value="2">Casa</ion-option>
+            </ion-select>
+        </ion-item>
+          <ion-item>
+              <ion-label floating>Qual o valor de cobertura deseja contratar?</ion-label>
+              <ion-input formControlName="nome" type="text" [class.invalid]="!slideOneForm.controls.nome.valid && (slideOneForm.controls.nome.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!slideOneForm.controls.nome.valid  && (slideOneForm.controls.nome.dirty || submitAttempt)">
+            <p>Informe um valor válido.</p>
+          </ion-item>
+          
+
+          <!--<ion-item>
+              <ion-label floating>CPF/CNPJ</ion-label>
+              <ion-input formControlName="nome" type="text" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>Registro</ion-label>
+              <ion-input formControlName="nome" type="text" ></ion-input>
+          </ion-item>-->
+          <!-- <ion-item>
+              <ion-label class="info">Aceita algum convênio ?</ion-label>
+              <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+          <ion-item>
+              <ion-label class="info">Atende via chat ?</ion-label>
+              <ion-toggle checked="false"></ion-toggle>
+          </ion-item> -->
+          <!-- <ion-item>
+              <ion-label floating>Age</ion-label>
+              <ion-input formControlName="age" type="number" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!slideOneForm.controls.age.valid  && (slideOneForm.controls.age.dirty || submitAttempt)">
+              <p>Please enter a valid age.</p>
+          </ion-item> -->
+
+      </form>
+
+  </ion-list>
 
 </ion-slide>
 
@@ -125,11 +126,16 @@
   <ion-list no-lines>
       <form [formGroup]="slideThreeForm">
           <ion-item>
-              <ion-label class="configs">Aceita algum convênio ?</ion-label>
+              <ion-label class="configs">Possui algo como alarme ou cerca elétrica ? 
+</ion-label>
               <ion-toggle checked="false"></ion-toggle>
           </ion-item>
           <ion-item>
-              <ion-label class="configs">Atende via chat ?</ion-label>
+              <ion-label class="configs">Quer adicionar seguro contra danos elétricos ?</ion-label>
+              <ion-toggle checked="false"></ion-toggle>
+          </ion-item>
+          <ion-item>
+              <ion-label class="configs">Quer adicionar assistência residencial 24 horas ?</ion-label>
               <ion-toggle checked="false"></ion-toggle>
           </ion-item>
           <!-- <ion-item>
@@ -144,9 +150,10 @@
       </form>
 
   </ion-list>
-    <button ion-button full color="primary" (click)="save()">Cadastrar!</button>
+  <button ion-button full color="primary" (click)="save()">Simular !</button>
 
 </ion-slide>
+
 
 </ion-slides>
 </ion-content>
